@@ -6,9 +6,10 @@ let supported = {};
 core.networks = require('./lib/networks');
 core.coins = require('./lib/coins');
 
-core.networks.forEach(function(network) {
+for (let i in core.networks) {
+	let network = core.networks[i];
 	supported[network.coin] = network;
-});
+}
 
 core.get = function(input) {
 	let coin = input.toLowerCase();
